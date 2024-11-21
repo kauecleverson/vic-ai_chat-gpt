@@ -2,15 +2,11 @@
 html{
     overflow: hidden;
 }
-
-body{
-    background-color:#591769;
-    width: 100%;
-}
-
 main{
-    background-color: #fff;
+    display: flex;
+    justify-content: center;
 }
+
 
 header{
     background-color:#591769;
@@ -70,15 +66,10 @@ header p{
 
 .container-main{
     width: 80%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.nav-header li{
-    flex-shrink: 0;
 }
 
 .nav-header li a{
@@ -102,6 +93,119 @@ header p{
     display: none;
 }
 
+.nav-header-mobile{
+    display: none;
+}
+
+html{
+    overflow: hidden;
+}
+
+body{
+    background-color:#591769;
+    height: 100vh;
+}
+
+main{
+    background-color: #fff;
+}
+footer{
+    background-color: #591769;
+}
+header{
+    background-color:#591769;
+    padding: 15px 0;
+    border-bottom: 10px solid #1E4F05;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+figure #title{
+    float: right;
+    margin-top: 14px;
+    margin-left: 15px;
+}
+
+figure img{
+    width: 50px;
+}
+
+#school-logo{
+    cursor: pointer;
+}
+
+header p{
+    color: #fff;
+    font-size: 1.1em;
+    font-family: 'Montserrat';
+}
+
+
+.header-main{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-main .nav-header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.header-main figure img{
+    width: 200px;
+}
+main{
+    display: flex;
+    justify-content: center ;
+}
+.container-main{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.nav-header li a{
+    color:#000000;
+    transition: transform 0.3s ease, color 0.3s ease; 
+    transform-origin: center;
+    display: inline-block;
+}
+
+.nav-header a:hover{
+    color: #2F2F2F;
+    transition: 0.2s;
+    transform: scale(1.06);
+}
+
+.hamburguinho{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+}
+
+footer{
+    padding: 9  0px 0;
+    background-color: purple;
+}
+
 @media (max-width: 480px) and (max-height: 970px){
     header{
         display: flex;
@@ -115,6 +219,17 @@ header p{
         
     }
 
+    .header-main{
+        gap: -10px;
+    }
+
+    #school-logo{
+        display: inline;
+    }
+    #school-logo img{
+        width: 200px;
+    }
+
     #hidden-mobile{
         display: none;
     }
@@ -123,6 +238,39 @@ header p{
     }
 
     .hamburguinho{
-        display:inline-block;
+        display:inline;
+        width: 20px;
+        margin-right: 10px;
     }
+
+    .hamburguinho button img{
+        width: 30px;
+    }
+    .hamburguinho button{
+        background-color: transparent;
+    }
+
+    #chat-output p{
+        font-size: 0.7em;
+    }
+
+    #chat-output figure img{
+        width: 80px;
+        margin-top: 14px;
+    }
+
+    .about-chat{
+        
+    }
+
+    .about-chat ul li{
+        padding: 1px;
+        font-size: 0.5em;
+        
+    }
+
+    #about-tech-course, #about-been-made, #create-img, #surprise{
+        padding: 3px 2px;
+        font-size: 0.5em;
+    }  
 }
