@@ -2,7 +2,7 @@
 
 body{
     height: 100vh;
-    overflow-y: hidden;
+    overflow-y: auto;
     --color1: #FFF ;
     --color2: #fff ;
 }
