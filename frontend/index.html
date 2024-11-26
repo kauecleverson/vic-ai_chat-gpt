@@ -7,67 +7,79 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/chat.css">
+    <link rel="stylesheet" href="styles/mediaquery.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
     <header>
-        <figure>
+       <div class="bot-picture">
+        <figure class="first-bot">
             <img src="assets/images/logo-bot.png" alt="Logo da cabeça de um robô">
-            <p id="title">IA VIC</p>
         </figure>
+        <p id="title">IA VIC</p>
+       </div>
         <p id="hidden-mobile">-</p><p>Tire suas dúvidas sobre o colégio aqui</p>
     </header>
+    <div class="green-row"></div>
     <main>
-    <div class="container-main">
-        <div class="header-main">
-            <figure id="school-logo">
-                <img src="assets/images/logo_vic.png" alt="Logo Colégio Victorino">
-            </figure>
-            <nav class="nav-header">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Sobre AI</a></li>
-                    <li><a href="">Serviços</a></li>
-                    <li><a href="">Comandos</a></li>
-                </ul>
-            </nav>
-        </div>
-        <figure class="hamburguinho">
-            <button onclick="">
-                <img src="assets/images/hamburguinho.png" alt="image of hamburguinho" class="icon-mobile">
-            </button>
-        </figure>
-        <nav class="mobile-menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre AI</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Comandos</a></li>
-            </ul>
-        </nav>
-        <div class="chat-main">
-            <div id="chat-output">
-                <figure >
-                    <img id="bot-chat" src="assets/images/bot-chat.png" alt="Imagem do assitente">
+        <div class="container-main">
+            <div class="header-main">
+                <figure id="school-logo">
+                    <img src="assets/images/logo_vic.png" alt="Logo Colégio Victorino">
                 </figure>
-                <p>Olá, bem vindo ao VIC AI. Como posso te ajudar hoje?
-                </p>
+                <nav class="nav-header">
+                    <ul class='nav-bar'>
+                        
+                        <input type='checkbox' id='check' />
+                        <span class="menu">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Products</a></li>
+                            <li><a href="">Services</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Contact</a></li>
+                            <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                        </span>
+                        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+                    </ul>
+                </nav>
             </div>
-            <input type="text" name="" id="chat-input" placeholder="Message VIC AI22"><button><i class="fa-fa search"></i></button>
-            <div class="about-chat">
-                <ul>
-                    <li id="about-tech-course">📚   Sobre o curso técnico</li>
-                    <li id="about-been-made">💭  Como você foi feito?</li>
-                    <li id="create-img">🖼️  Crie uma imagem</li>
-                    <li id="surprise">🎲  Surpreenda-me</li>
-                </ul>
-            </div>
+        
+            <section class="part-bot" id="partBot">
+                <div class="chat-bot">
+                    <div class="output-message">
+                        <div class="greeting">
+                            <figure clas="image-bgc">
+                                <img src="assets/images/bot-chat.png" alt="image of the bot ia" class="icon-bot">
+                            </figure>
+                            <div class="output-part" id="outputPart">
+                                <h2 id="reveal-title"></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-message">
+                        <div class="input-part">
+                            <form >
+                                <input type="text" placeholder="Message VIC IA." maxlength="60" id="prompt" required>
+                            </form>
+                        </div>
+                        <div class="suggestions-bot" id="suggestion">
+                            <ul>
+                                <li><a href="#" class="suggestion-li">📚   Sobre o curso técnico</a></li>
+                                <li><a href="#" class="suggestion-li">💭  Como você foi feito?</a></li>
+                                <li><a href="#" class="suggestion-li" onclick="trocarConteudo()">🖼️  Crie uma imagem</a></li>
+                                <li><a href="#" class="suggestion-li">🎲  Surpreenda-me</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
     </main>
-    <footer><div class="footer"></div></footer>
+    <footer></footer>
+    <script src="assets/scripts/main.js"></script>
 </body>
 </html>

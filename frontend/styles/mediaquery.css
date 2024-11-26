@@ -1,0 +1,229 @@
+@media (max-width: 480px) {
+    /* Estilos para dispositivos com largura até 480px */
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        height: 50vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+    .mobile-menu{
+        display: inline;
+    }
+
+    header{
+        gap: 12px;
+        font-size: 1.1em;
+        padding: 20px 0;
+    }
+
+    .bot-picture{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .first-bot img{
+        width: 40px;
+    }
+    
+    /* END HEADER */
+    
+    .container-main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+    }
+    
+    #reveal-title{
+        font-size: 0.6em;
+    }
+    .nav-header ul{
+        gap: 25px;
+        font-size: 0.8em;
+    }
+    
+    #school-logo img{
+        width: 170px;
+    }
+
+    .part-bot {
+        height: 39rem;
+        width: 80%;
+        transition: width 0.5s ease;
+        z-index: 0;
+        border-radius: 5px;
+        margin-bottom: 3rem;
+    }
+    
+    .part-bot .suggestions-bot ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1.2rem; /* Aumente o gap para ajustar o alinhamento */
+        row-gap: 1rem; /* Espaçamento entre as linhas */
+    }
+    .part-bot .suggestions-bot ul li a{
+        font-size: 11px;
+        color: #FFF;
+        font-family: "Anonymous Pro", monospace;
+        padding: 10px;
+        background-color: #656565;
+        border-radius: 2rem;
+        display: inline-block; /* Permite que o scale funcione corretamente */
+        transition: transform 0.8s ease-in-out;
+    }
+
+    .suggestions-bot{
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        position: relative;
+        height: 100px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .suggestions-bot::-webkit-scrollbar {
+        display: none;
+    }
+    .suggestions-bot li {
+        width: 180px;
+    }
+
+  }
+
+  @media (min-width: 481px) and (max-width: 768px) {
+    /* Estilos para dispositivos entre 481px e 768px */
+
+    body{
+        height: 100vh;
+        overflow-y: hidden;
+    }
+
+    .menu {
+        width: 40%;
+        height: 60vh;
+    }
+
+    header{
+        gap: 25px;
+        padding: 20px 0;
+        font-size: 1.3em;
+        font-weight: 600;
+        border-bottom: 5px solid white;
+    }
+    
+    .green-row{
+        background-color: green;
+        padding: 5px;
+    }
+    
+    .bot-picture{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* END HEADER */
+    
+    .nav-header ul{
+        gap: 30px;
+        font-size: 1.0em;
+    }
+
+    .part-bot .suggestions-bot ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1.2rem; /* Aumente o gap para ajustar o alinhamento */
+        row-gap: 1rem; /* Espaçamento entre as linhas */
+        overflow: scroll;
+        width: 400px;
+    }
+    .part-bot .suggestions-bot ul li a{
+        font-size: 12px;
+        color: #FFF;
+        font-family: "Anonymous Pro", monospace;
+        padding: 7px;
+        background-color: #656565;
+        border-radius: 2rem;
+        display: inline-block; /* Permite que o scale funcione corretamente */
+        transition: transform 0.8s ease-in-out;
+    }
+    
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 40%;
+        height: 50vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+
+    .suggestions-bot{
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        position: relative;
+        height: 100px;
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .suggestions-bot::-webkit-scrollbar {
+        display: none;
+    }
+    .suggestions-bot li {
+        width: 180px;
+    }
+
+
+  }
+
+  @media (min-width: 1920px) and (min-height: 1080px){
+    
+    .nav-bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        position: relative;
+        background-color: var(--color2);
+        padding: 150px 20px;
+    }
+
+    .part-bot {
+        height: 38rem;
+        width: 80%;
+        transition: width 0.5s ease;
+        z-index: 0;
+        border-radius: 5px;
+        margin-bottom: 3rem;
+    }
+  }
