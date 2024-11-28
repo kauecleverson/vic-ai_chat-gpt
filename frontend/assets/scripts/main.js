@@ -4,32 +4,159 @@ const chatBot = document.querySelector(".chat-bot");
 const promptInput = document.getElementById("prompt");
 const form = document.querySelector("#gemini-ia");
 
+function menuShow() {
+    let menu = document.querySelector('.nav-menu');
+    let icon = document.querySelector('.icon');
+    let partBot = document.getElementById("partBot");
+    let suggestion = document.getElementById("suggestion");
+    let suggestionLi = document.getElementById("suggestion-li")
+    
+    // Verifica se o menu tem a classe 'open'
+    if(menu.classList.contains('open')) {
+        menu.classList.remove('open');  // Remove a classe open
+        icon.src = "assets/img/hamburguinho.png";  // Muda a imagem para o ícone original
+        partBot.classList.remove('open')
+    } else {
+        menu.classList.add('open');  // Adiciona a classe open
+        icon.src = "assets/img/xLogo.png";  // Muda a imagem para o ícone de fechar
+        partBot.classList.add('open');
+    }
+}
+
+function menuShowMobile() {
+  let menu = document.querySelector('.mobile-menu');
+  let icon = document.querySelector('.icon');
+  let partBot = document.getElementById("partBot");
+  let suggestion = document.getElementById("suggestion");
+  let suggestionLi = document.getElementById("suggestion-li")
+  
+  // Verifica se o menu tem a classe 'open'
+  if(menu.classList.contains('open')) {
+      menu.classList.remove('open');  // Remove a classe open
+      icon.src = "assets/img/hamburguinho.png";  // Muda a imagem para o ícone original
+      partBot.classList.remove('open')
+  } else {
+      menu.classList.add('open');  // Adiciona a classe open
+      icon.src = "assets/img/xLogo.png";  // Muda a imagem para o ícone de fechar
+      partBot.classList.add('open');
+  }
+}
+
+// Função para rolar até o fundo automaticamente
+function scrollToBottom() {
+  const chatContainer = document.querySelector('.output-message');
+  if (chatContainer) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+}
+
+// Configuração do MutationObserver para observar mudanças no conteúdo do chat
+const chatContainer = document.querySelector('.output-message');
+
+
+if (chatContainer) {
+  const observer = new MutationObserver(() => {
+      scrollToBottom(); // Quando houver mudanças, rola automaticamente para baixo
+  });
+
+  // Inicia a observação de alterações no conteúdo dentro do .chat-container
+  observer.observe(chatContainer, {
+      childList: true,    // Observa a adição ou remoção de elementos filhos
+      subtree: true       // Observa os elementos dentro do contêiner (subárvores)
+  });
+}
+
+// Certifique-se de que o chat rola para o final quando a página é carregada
+document.addEventListener('DOMContentLoaded', () => {
+  scrollToBottom();
+});
+
+function showVideo(videoSrc) {
+    const overlay = document.getElementById("overlayVideoContainer");
+    const overlayVideo = document.getElementById("overlayVideo");
+    
+    overlayVideo.src = videoSrc;
+    overlay.style.display = 'flex';
+
+    document.querySelector("main").classList.add("blur");
+
+    overlay.onclick = function() {
+        overlayVideo.pause();
+        overlay.style.display = 'none';
+    };
+}
+
+function showImage(imagemSrc) {
+    const overlay = document.getElementById("overlayImagemContainer");
+    const overlayImg = document.getElementById("overlayImage");
+    
+    overlayImg.src = imagemSrc;
+
+    overlay.style.display = 'flex';
+
+    document.querySelector("main").classList.add("blur");
+
+    overlay.onclick = function() {
+        overlay.style.display = 'none';
+    };
+}
+
+// Function to show a specific div by class name
+function showDiv(className) {
+  const divToShow = document.getElementById(className);
+  const bodyContent = document.body; 
+  
+  if (divToShow) {
+      divToShow.style.display = 'flex'; 
+  }
+}
+
+// Function to close a specific overlay or div by class name
+function closeOverlay(className) {
+const divToClose = document.getElementById(className);
+const bodyContent = document.body;
+
+if (divToClose) {
+    divToClose.style.display = 'none'; 
+}
+}
+
+// Function that fills the input with the message and submits the form
+function setMessage(message) {
+  // Fills the input field with the provided message
+  document.getElementById('prompt').value = message;
+
+  // Prevent the form from being submitted the default way (reloading the page)
+  event.preventDefault();
+
+  // Manually trigger the form submission by calling a custom submit handler
+  document.getElementById('gemini-ai').dispatchEvent(new Event('submit'));
+}
+
+// Your custom function for handling the form data
+function onSubmit() {
+  // Example of what you can do after the form is submitted
+  const message = document.getElementById('prompt').value;
+  console.log('Form submitted with message:', message);
+
+  // You can now send the message via an AJAX request, update the chat UI, etc.
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const element = document.getElementById("reveal-title"); // Title
     const text = "Olá, bem vindo ao VIC AI. Como posso te ajudar hoje?"; // Text to title
     let index = 0;
   
     const typeEffect = () => {
-        if (index < text.length) {
-          element.textContent += text.charAt(index);
-          index++;
-          setTimeout(typeEffect, 35);
-        }
-      };
-    
-      typeEffect();
+      if (index < text.length) {
+        element.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 35);
+      }
+    };
+  
+    typeEffect();
 });
-
-  function menuShow() {
-    let menuMobile = document.querySelector('.mobile-menu')
-    if(menuMobile.classList.contains('open')){
-        menuMobile.classList.remove('open')
-        document.querySelector('.icon-mobile').src = "assets/images/hamburguinho.png"
-    } else{
-        menuMobile.classList.add('open')
-        document.querySelector('.icon-mobile').src = "assets/images/hamburguinho.png"
-    }
-}
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();

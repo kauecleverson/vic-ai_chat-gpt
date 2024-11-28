@@ -126,14 +126,101 @@ main{
 }
 .nav-menu.open li:nth-child(1){
     text-shadow:
-    2px 2px 0px #5F4B7B,
-    -2px -2px 0px #5F4B7B,
-    2px -2px 0px #5F4B7B,
-    -2px 2px 0px #5F4B7B;
+    2px 2px 0px #ccc,
+    -2px -2px 0px #ccc,
+    2px -2px 0px #ccc,
+    -2px 2px 0px #ccc;
 }
 .greeting{
     display: flex;
     align-items: center;
 }
 
+/* Style message bot */
+.role-bot .text,
+.role-user .text {
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Garante que palavras longas sejam quebradas */
+    word-break: break-word;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ccc;
+    padding: 1rem;
+    border-radius: 15px;
+}
 
+/* Estilos específicos para elementos gerados pelo markdown */
+.role-bot .text {
+    /* Para links longos */
+    a {
+        word-break: break-all;
+    }
+
+    /* Para blocos de código */
+    pre {
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 16px;
+        border-radius: 6px;
+        background-color: #090909;
+    }
+
+    /* Para código inline */
+    code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        padding: 2px 0;
+        border-radius: 4px;
+    }
+
+    /* Para tabelas */
+    table {
+        max-width: 100%;
+        overflow-x: auto;
+        display: block;
+        border-collapse: collapse;
+    }
+
+    /* Para imagens */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Para listas */
+    ul, ol {
+        padding-left: 20px;
+        margin: 8px 0;
+    }
+
+    /* Para parágrafos */
+    p {
+        margin: 8px 0;
+        line-height: 1.5;
+    }
+}
+
+.text {
+    color: #fff;
+    margin: 10px 0;
+}
+
+/* Ajuste para containers de mensagens */
+.role-bot,
+.role-user {
+    width: 100%;
+    display: flex;
+    margin: 8px 0;
+    z-index: 999999999;
+}
+
+.role-bot {
+    justify-content: flex-start;
+}
+
+.role-user {
+    justify-content: flex-end;
+}
