@@ -226,4 +226,8 @@
         border-radius: 5px;
         margin-bottom: 3rem;
     }
+
+    .first-bot img{
+        width: 60px;
+    }
   }
