@@ -156,8 +156,16 @@ footer{
     list-style: disc;
     font-weight: normal;
 }
+.overlay ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .overlay ul li{
-    margin-left: 20px;
+   
+    color: #fff;
+    font-size: 1.3em;
 }
 .overlay .overlay-content button {
     background-color: #1E4F05;
@@ -181,7 +189,7 @@ footer{
 
 }
 .overlay-content {
-    background-color: #4B3E5E;
+    background-color: #2d2d2d;
     border: 3px solid #aaa;
     animation: borderGlowMove 3s infinite;
     width: 60%;
